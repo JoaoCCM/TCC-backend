@@ -26,7 +26,7 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() => console.log("DB on"))
-    .catch((err) => console.log(err));
+    .catch((err) => console.error(err));
 
 app.use(routes);
 
