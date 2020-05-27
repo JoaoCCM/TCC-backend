@@ -1,31 +1,32 @@
-const mongoose = require('mongoose');
-
+const mongoose = require("mongoose");
 
 const StudentSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     course: {
         type: String,
-        required: true
+        required: true,
     },
     password: {
         type: String,
         required: true,
-        select: false
+        select: false,
+    },
+    avatar_url: {
+        type: String,
     },
     // essa parte é pra dps que criar o model teacher
     // teacherList: [{
     //     type: mongoose.Schema.Types.ObjectId,
     //     ref: 'Teacher'
     // }]
-
 });
 
-module.exports = mongoose.model('Student', StudentSchema);
+module.exports = mongoose.model("Student", StudentSchema);
