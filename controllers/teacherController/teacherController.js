@@ -20,7 +20,7 @@ module.exports = {
                 guidence,
             } = req.body;
 
-            const teacher = await Teacher.create(
+            const teacher = await Teacher.create({
                 name,
                 email,
                 academicFormation,
@@ -28,18 +28,18 @@ module.exports = {
                 projects,
                 productions,
                 examingBoard,
-                guidence
-            );
+                guidence,
+            });
 
             await Promise.all(
                 projects.map(async (project) => {
                     const Teacher_project = new Project({
-                        ...projects,
+                        ...project,
                         teacher: teacher._id,
                     });
 
                     await Teacher_project.save();
-                    teacher.projects.push(Teacher_project);
+                    teacher.projects.projects.push(Teacher_project);
                 })
             );
 
@@ -51,7 +51,7 @@ module.exports = {
                     });
 
                     await Teacher_productions.save();
-                    teacher.productions.push(Teacher_productions);
+                    teacher.productions.productions.push(Teacher_productions);
                 })
             );
 
@@ -63,7 +63,9 @@ module.exports = {
                     });
 
                     await Teacher_examingBoard.save();
-                    teacher.examingBoard.push(Teacher_examingBoard);
+                    teacher.examingBoard.examingBoard.push(
+                        Teacher_examingBoard
+                    );
                 })
             );
 
@@ -75,7 +77,7 @@ module.exports = {
                     });
 
                     await Teacher_guidence.save();
-                    teacher.guidence.push(Teacher_guidence);
+                    teacher.guidence.guidence.push(Teacher_guidence);
                 })
             );
 
@@ -83,7 +85,7 @@ module.exports = {
 
             return res.send({ teacher });
         } catch (err) {
-            console.log(err);
+            console.error(err);
             return res.status(400).send({ error: "Registration failed" });
         }
     },

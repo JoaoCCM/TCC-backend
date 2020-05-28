@@ -17,7 +17,7 @@ const TeacherShema = new mongoose.Schema({
         type: [String],
     },
     projects: {
-        projets: [
+        projects: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Project",
