@@ -1,12 +1,16 @@
 const { Router } = require("express");
 const routes = Router();
 
+const AuthController = require("../api/auth");
 const UserController = require("../controllers/userController");
 const ExamingController = require("../controllers/examingController/examingController");
 const GuidenceController = require("../controllers/guidenceController/guidenceController");
 const ProductionController = require("../controllers/productionController/productionController");
 const ProjectController = require("../controllers/projectController/projectController");
 const TeacherController = require("../controllers/teacherController/teacherController");
+
+//signin
+routes.post("/signin", AuthController.signin);
 
 //User
 routes.post("/user/register", UserController.create);

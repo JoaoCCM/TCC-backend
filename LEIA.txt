@@ -1,0 +1,6 @@
+Em relação a autentificação (sign in) é preciso criar um arquivo
+.env na raiz do projeto com o seguinte formato:
+
+module.exports = {
+    authSecret : 'qwbdfwb!2883###$%#@!3dkbdkb**&'
+}
