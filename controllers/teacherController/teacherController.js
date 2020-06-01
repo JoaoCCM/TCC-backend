@@ -25,10 +25,6 @@ module.exports = {
                 email,
                 academicFormation,
                 researchField,
-                projects,
-                productions,
-                examingBoard,
-                guidence,
             });
 
             await Promise.all(
