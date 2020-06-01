@@ -1,5 +1,5 @@
 const express = require("express");
-const Student = require("../models/Student");
+const Student = require("../../models/Student");
 
 module.exports = {
     async create(req, res) {
@@ -13,7 +13,7 @@ module.exports = {
 
             return res.send({ user });
         } catch (err) {
-            console.log(err);
+            console.error(err);
             return res.status(400).send({ error: "Registration failed" });
         }
     },

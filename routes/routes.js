@@ -2,7 +2,7 @@ const { Router } = require("express");
 const routes = Router();
 
 const AuthController = require("../api/auth");
-const UserController = require("../controllers/userController");
+const UserController = require("../controllers/userController/userController");
 const ExamingController = require("../controllers/examingController/examingController");
 const GuidenceController = require("../controllers/guidenceController/guidenceController");
 const ProductionController = require("../controllers/productionController/productionController");
