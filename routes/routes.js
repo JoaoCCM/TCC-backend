@@ -17,6 +17,7 @@ routes.post("/user/register", UserController.create);
 
 //Teacher
 routes.post("/teacher/register", TeacherController.create);
+routes.get("/teacher", TeacherController.getByName);
 
 //Examing Board
 routes.post("/board/register", ExamingController.create);
@@ -26,6 +27,7 @@ routes.post("/guidence/register", GuidenceController.create);
 
 //Production
 routes.post("/production/register", ProductionController.create);
+routes.get("/production", ProductionController.showByKeyword);
 
 //Project
 routes.post("/project/register", ProjectController.create);

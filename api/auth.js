@@ -1,4 +1,4 @@
-const { authSecret } = require("../.env");
+const authSecret = process.env.AUTH_SECRET;
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const Student = require("../models/Student");

@@ -12,4 +12,10 @@ const ProductionSchema = new mongoose.Schema({
     },
 });
 
+ProductionSchema.index({
+    title: "text",
+    authors: "text",
+    keyWords: "text",
+});
+
 module.exports = mongoose.model("Production", ProductionSchema);

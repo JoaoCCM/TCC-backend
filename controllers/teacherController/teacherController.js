@@ -85,4 +85,19 @@ module.exports = {
             return res.status(400).send({ error: "Registration failed" });
         }
     },
+
+    async getByName(req, res) {
+        try {
+            const { profName } = req.query;
+            const nameRegex = new RegExp(profName);
+            const specificTeacher = await Teacher.find({
+                name: { $regex: nameRegex, $options: "i" },
+            });
+
+            return res.status(200).send({ specificTeacher });
+        } catch (error) {
+            const { message } = error;
+            return res.status(500).send({ message });
+        }
+    },
 };
