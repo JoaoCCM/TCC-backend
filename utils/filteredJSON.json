@@ -1,0 +1,60 @@
+{
+    "items": [
+        {
+            "lattesId": "2837012019824386",
+            "identificacao": {
+                "identificador10": {},
+                "nome_inicial": {},
+                "nome_completo": { "_text": "Andréa Britto Mattos" },
+                "nome_citacao_bibliografica": {
+                    "_text": "MATTOS, A. B.;MATTOS, ANDRÉA BRITTO;MATTOS, A B"
+                },
+                "sexo": { "_text": "Masculino" }
+            },
+            "idiomas": {
+                "idioma": [
+                    {
+                        "nome": { "_text": "Inglês" },
+                        "proficiencia": {
+                            "_text": "Compreende Bem, Fala Bem, Lê Bem, Escreve Bem."
+                        }
+                    },
+                    {
+                        "nome": { "_text": "Espanhol" },
+                        "proficiencia": {
+                            "_text": "Compreende Bem, Fala Bem, Lê Bem, Escreve Bem."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "lattesId": "2557440893085062",
+            "identificacao": {
+                "identificador10": {},
+                "nome_inicial": {},
+                "nome_completo": { "_text": "Ana Cristina Gobbo César" },
+                "nome_citacao_bibliografica": {
+                    "_text": "CÉSAR, A. C. G.;César, Ana Cristina Gobbo"
+                },
+                "sexo": { "_text": "Masculino" }
+            },
+            "idiomas": {
+                "idioma": [
+                    {
+                        "nome": { "_text": "Inglês" },
+                        "proficiencia": {
+                            "_text": "Compreende Razoavelmente, Fala Pouco, Lê Bem, Escreve Razoavelmente."
+                        }
+                    },
+                    {
+                        "nome": { "_text": "Espanhol" },
+                        "proficiencia": {
+                            "_text": "Compreende Razoavelmente, Fala Pouco, Lê Razoavelmente, Escreve Pouco."
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

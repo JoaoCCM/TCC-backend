@@ -1,15 +1,7 @@
 var convert = require("xml-js");
-var fs = require("fs");
+const fs = require("fs");
 
 var xml = fs.readFileSync(__dirname + "/teste01.xml");
-
-// var xml =
-//     '<?xml version="1.0" encoding="UTF-8"?>' +
-//     '<note importance="high" logged="true">' +
-//     "    <title>Happy</title>" +
-//     "    <todo>Work</todo>" +
-//     "    <todo>Play &</todo>" +
-//     "</note>";
 
 var result2 = convert.xml2json(
     xml,
@@ -17,8 +9,44 @@ var result2 = convert.xml2json(
     // .replace(/&/g, "&amp;")
     // .replace(/-/g, "&#45;"),
     {
-        compact: false,
+        compact: true,
         spaces: 4,
     }
 );
-console.log(result2);
+
+//se o arquivo não existir o filesystem cria
+fs.writeFileSync("./teste01.json", result2, (err) => {
+    console.error(err);
+});
+
+const filterJSON = (data, id) => {
+    const filteredFields = ["identificacao", "idiomas"];
+    const keys = Object.keys(data);
+
+    // const filterInternValues = {
+    //     identificacao: ["nome_completo"],
+    // };
+
+    const filteredJson = keys
+        .filter((key) => filteredFields.includes(key))
+        .reduce((obj, key) => {
+            obj[key] = data[key];
+            return obj;
+        }, {});
+
+    return { lattesId: id, ...filteredJson };
+};
+
+var json = require("./teste01.json");
+
+const filteredJson = {};
+
+filteredJson.items = json.curriculo_lattes.pesquisador.map((it) =>
+    filterJSON(it, it._attributes.id)
+);
+
+console.log(filteredJson);
+
+fs.writeFileSync("./filteredJSON.json", JSON.stringify(filteredJson), (err) => {
+    console.error(err);
+});
