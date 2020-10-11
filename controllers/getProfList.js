@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const fs = require("fs");
 
 let trial = async () => {
     const browser = await puppeteer.launch();
@@ -40,5 +41,16 @@ let trial = async () => {
 };
 
 trial().then((value) => {
-    console.log(value);
+    let justId = "";
+    value.map((prof) => (justId += `${prof.lattes},`));
+    fs.writeFileSync(
+        "../dist/listProfLattesID.json",
+        JSON.stringify(value),
+        (err) => {
+            console.error(err);
+        }
+    );
+    fs.writeFileSync("../dist/listJustID.txt", justId, (err) => {
+        console.error(err);
+    });
 });
